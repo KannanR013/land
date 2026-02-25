@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Chennai Land Price Predictor</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(270deg,#0f2027,#203a43,#2c5364);
+background-size:400% 400%;
+animation:bgmove 12s ease infinite;
+}
+
+@keyframes bgmove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.card{
+width:440px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(25px);
+padding:35px;
+border-radius:22px;
+box-shadow:0 0 45px rgba(0,0,0,0.45);
+}
+
+.logo{
+text-align:center;
+font-size:34px;
+color:#00eaff;
+margin-bottom:5px;
+}
+
+.title{
+text-align:center;
+color:white;
+font-size:24px;
+font-weight:600;
+margin-bottom:20px;
+}
+
+.field{
+margin-bottom:15px;
+}
+
+label{
+color:#eee;
+font-size:13px;
+display:block;
+margin-bottom:5px;
+}
+
+.input, select{
+width:100%;
+height:48px;
+border-radius:14px;
+border:none;
+outline:none;
+padding-left:14px;
+font-size:14px;
+background:rgba(255,255,255,0.15);
+color:white;
+}
+
+input::placeholder{
+color:#ddd;
+}
+
+select{
+color:black;
+}
+
+button{
+width:100%;
+height:52px;
+border:none;
+border-radius:16px;
+background:linear-gradient(90deg,#00c6ff,#0072ff);
+color:white;
+font-size:16px;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+margin-top:10px;
+}
+
+button:hover{
+transform:scale(1.05);
+box-shadow:0 0 20px #00c6ff;
+}
+
+.footer{
+text-align:center;
+color:#ccc;
+font-size:12px;
+margin-top:12px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="logo">🏙️</div>
+<div class="title">Chennai Land Price Predictor</div>
+
+<form action="/predict" method="POST">
+
+<div class="field">
+<label>Area (sqft)</label>
+<input 
+type="number"
+name="area"
+class="input"
+placeholder="Enter land area (300 - 10000 sqft)"
+min="300"
+max="10000"
+step="any"
+required>
+
+</div>
+
+<div class="field">
+<label>Locality</label>
+<select name="locality" required>
+<option value="" disabled selected>Select Chennai Locality</option>
+
+{% for loc in localities %}
+<option value="{{loc}}">{{loc}}</option>
+{% endfor %}
+
+</select>
+</div>
+
+<div class="field">
+<label>Distance to City (KM)</label>
+<input 
+type="number"
+name="distance"
+class="input"
+placeholder="Distance from city centre"
+min="0"
+step="any"
+required>
+</div>
+
+<div class="field">
+<label>Road Access</label>
+<select name="road" required>
+<option value="" disabled selected>Select Road Access</option>
+<option value="Yes">Yes</option>
+<option value="No">No</option>
+</select>
+</div>
+
+<div class="field">
+<label>Land Type</label>
+<select name="land_type" required>
+<option value="" disabled selected>Select Land Type</option>
+<option value="Residential">Residential</option>
+<option value="Commercial">Commercial</option>
+<option value="Industrial">Industrial</option>
+</select>
+</div>
+
+<button type="submit">
+ Predict Land Price
+</button>
+
+</form>
+
+<div class="footer">
+Powered by Real Chennai Dataset 
+</div>
+
+</div>
+
+</body>
+</html>

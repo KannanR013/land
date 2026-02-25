@@ -1,0 +1,26 @@
+area,locality,distance,road_access,land_type,price
+1200,Anna Nagar,4,Yes,Residential,24000000
+1500,Anna Nagar,3,Yes,Commercial,42000000
+900,T Nagar,2,Yes,Commercial,30000000
+1000,T Nagar,3,Yes,Residential,22000000
+800,Velachery,8,Yes,Residential,7200000
+1100,Velachery,7,Yes,Commercial,13500000
+1300,Adyar,5,Yes,Residential,26000000
+1400,Adyar,4,Yes,Commercial,35000000
+750,Tambaram,22,No,Residential,4200000
+950,Tambaram,20,Yes,Residential,5200000
+1000,Porur,14,Yes,Residential,7800000
+1200,Porur,12,Yes,Commercial,12000000
+1150,OMR,10,Yes,Residential,9800000
+1400,OMR,9,Yes,Commercial,16500000
+900,Chrompet,18,Yes,Residential,5800000
+1050,Chrompet,17,Yes,Commercial,8200000
+1300,Guindy,6,Yes,Commercial,25000000
+1000,Guindy,7,Yes,Residential,14000000
+850,Velachery,9,No,Residential,6500000
+950,Adyar,6,Yes,Residential,21000000
+1250,T Nagar,4,Yes,Commercial,37000000
+1350,Anna Nagar,5,Yes,Residential,26000000
+1000,OMR,11,Yes,Residential,8800000
+1200,Porur,15,No,Residential,7000000
+1100,Chrompet,19,Yes,Residential,6000000
